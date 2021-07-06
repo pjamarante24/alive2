@@ -118,6 +118,7 @@ public class HandgunScriptLPFP : MonoBehaviour
     public Text currentWeaponText;
     public Text currentAmmoText;
     public Text totalAmmoText;
+    public Image weaponIcon;
 
     [System.Serializable]
     public class prefabs
@@ -421,7 +422,7 @@ public class HandgunScriptLPFP : MonoBehaviour
             mainAudioSource.clip = SoundClips.holsterSound;
             mainAudioSource.Play();
 
-            changeWeaponScript.changeWeapon();
+            changeWeaponScript.changeWeapon(weaponIcon);
         }
         //Toggle weapon holster when pressing E key
         // if (Input.GetKeyDown (KeyCode.E) && !hasBeenHolstered) 

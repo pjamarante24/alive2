@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeWeapon : MonoBehaviour
 {
     public GameObject primaryWeapon;
     public GameObject secondaryWeapon;
-
+    public Sprite primaryWeaponImage;
+    public Sprite secondaryWeaponImage;
     GameObject currentWeapon;
+    Sprite currentWeaponImage;
 
     private void Start()
     {
@@ -15,23 +18,26 @@ public class ChangeWeapon : MonoBehaviour
         currentWeapon.SetActive(true);
     }
 
-    public void changeWeapon()
+    public void changeWeapon(Image weaponImage)
     {
-        Debug.Log("Current Weapon: " + currentWeapon);
-
         currentWeapon.SetActive(false);
 
         if (currentWeapon == primaryWeapon)
         {
             currentWeapon = secondaryWeapon;
+            changeWeaponImage(weaponImage, secondaryWeaponImage);
             currentWeapon.SetActive(true);
         }
         else
         {
             currentWeapon = primaryWeapon;
+            changeWeaponImage(weaponImage, primaryWeaponImage);
             currentWeapon.SetActive(true);
         }
+    }
 
-        Debug.Log("New Weapon: " + currentWeapon);
+    private void changeWeaponImage(Image weaponImage, Sprite newWeaponIcon)
+    {
+        weaponImage.sprite = newWeaponIcon;
     }
 }
