@@ -5,7 +5,10 @@ using UnityEngine;
 public class Zombie : MonoBehaviour
 {
     public float health = 100f;
+    public int scorePerZombie = 400;
     public ZombieFollow zombieFollow;
+    public PlayerScore playerScore;
+
     void Start()
     {
         if (!zombieFollow) zombieFollow = gameObject.GetComponent<ZombieFollow>();
@@ -19,6 +22,7 @@ public class Zombie : MonoBehaviour
     }
     private void Kill()
     {
+        if(playerScore) playerScore.AddScore(scorePerZombie);
         zombieFollow.Kill();
         Destroy(gameObject, 5f);
     }
