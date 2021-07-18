@@ -8,11 +8,13 @@ TagManager:
   - Casing
   - Target
   - Enemy
+  - Weapon
+  - WeaponBuy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Weapon
+  - Weapons
   - Water
   - UI
   - 
