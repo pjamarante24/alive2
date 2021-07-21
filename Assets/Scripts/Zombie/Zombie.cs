@@ -8,23 +8,29 @@ public class Zombie : MonoBehaviour
     public int scorePerZombie = 400;
     public ZombieFollow zombieFollow;
     public PlayerScore playerScore;
+    public ZombieManager zombieManager;
+    public bool isDead = false;
 
     void Start()
     {
         if (!zombieFollow) zombieFollow = gameObject.GetComponent<ZombieFollow>();
+        if (!playerScore) playerScore = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerScore>();
+        if (!zombieManager) zombieManager = GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<ZombieManager>();
     }
 
     public void TakeDamage(float amount)
     {
         health -= amount;
-        if (health <= 0) Kill();
+        if (health <= 0 && !isDead) Kill();
 
     }
     private void Kill()
     {
-        if(playerScore) playerScore.AddScore(scorePerZombie);
+        isDead = true;
+        if (playerScore) playerScore.AddScore(scorePerZombie);
         zombieFollow.Kill();
-        Destroy(gameObject, 5f);
+        zombieManager.ZombieKilled(gameObject);
+        Destroy(gameObject, 3f);
     }
 
     public void OnAttack()

@@ -1902,6 +1902,7 @@ MonoBehaviour:
   animator: {fileID: 7566151245640585382}
   isAttacking: 0
   isDead: 0
+  shouldCrawl: 0
 --- !u!82 &728475625
 AudioSource:
   m_ObjectHideFlags: 0

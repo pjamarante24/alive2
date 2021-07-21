@@ -18,14 +18,18 @@ public class WeaponBuy : MonoBehaviour
         {
             if (hit.transform.CompareTag("WeaponBuy"))
             {
-                ShowPickUpText();
+                WeaponBuy buySpot = hit.transform.gameObject.GetComponent<WeaponBuy>();
+
+                ShowPickUpText(buySpot.cost);
 
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    if (playerScore.SubtractScore(cost))
+
+
+                    if (playerScore.SubtractScore(buySpot.cost))
                     {
                         HidePickUpText();
-                        weaponSwitch.PickWeapon(weapon);
+                        weaponSwitch.PickWeapon(buySpot.weapon);
                     }
 
                 }
@@ -42,7 +46,7 @@ public class WeaponBuy : MonoBehaviour
         }
     }
 
-    private void ShowPickUpText()
+    private void ShowPickUpText(int cost)
     {
         showingPickupText = true;
         pickUpText.text = "Press [F] to buy weapon.\n" + "Cost: $" + cost;

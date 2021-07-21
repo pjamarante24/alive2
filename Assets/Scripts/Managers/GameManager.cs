@@ -7,46 +7,63 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
+    public int round = 1;
     public float startDelay = 3f;
     public float endDelay = 3f;
     public Text messageText;
-
-    private WaitForSeconds startWait;
-    private WaitForSeconds endWait;
     private bool gameLost = false;
+    public ZombieManager zombieManager;
 
     private void Start()
     {
-        startWait = new WaitForSeconds(startDelay);
-        endWait = new WaitForSeconds(endDelay);
+        if (!zombieManager) zombieManager = GetComponent<ZombieManager>();
 
         StartCoroutine(GameLoop());
     }
 
     private IEnumerator GameLoop()
     {
+        yield return StartCoroutine(GameStarting());
+        yield return StartCoroutine(RoundLoop());
+        yield return StartCoroutine(GameEnding());
+    }
+
+    private IEnumerator GameStarting()
+    {
+        Setup();
+        messageText.text = "Game Starting";
+
+        yield return new WaitForSeconds(3f);
+    }
+
+    private IEnumerator RoundLoop()
+    {
         yield return StartCoroutine(RoundStarting());
         yield return StartCoroutine(RoundPlaying());
-        yield return StartCoroutine(RoundEnding());
 
-        Time.timeScale = 0;
-        // SceneManager.LoadScene("Main");
+        if (!gameLost)
+        {
+            yield return StartCoroutine(RoundEnding());
+            yield return StartCoroutine(RoundLoop());
+        }
     }
 
     private IEnumerator RoundStarting()
     {
-        Setup();
+        messageText.text = "Round " + round;
 
-        messageText.text = "Round 1";
+        yield return new WaitForSeconds(3f);
 
-        yield return startWait;
+        messageText.text = string.Empty;
+
+        yield return new WaitForSeconds(5f);
+
+        zombieManager.Setup(round);
     }
 
     private IEnumerator RoundPlaying()
     {
-        messageText.text = string.Empty;
-
-        while (PlayerIsAlive())
+        while (PlayerIsAlive() && zombieManager.zombiesLeft() > 0)
         {
             yield return null;
         }
@@ -54,10 +71,17 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RoundEnding()
     {
-        if (gameLost) messageText.text = "Game Over";
-        else messageText.text = "Round End";
+        messageText.text = "Round End";
+        round++;
 
-        yield return endWait;
+        yield return new WaitForSeconds(3f);
+    }
+
+    private IEnumerator GameEnding()
+    {
+        messageText.text = "Game Over";
+
+        yield return new WaitForSeconds(3f);
     }
 
     private bool PlayerIsAlive()

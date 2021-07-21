@@ -1716,6 +1716,7 @@ MonoBehaviour:
   animator: {fileID: 2544157611596281282}
   isAttacking: 0
   isDead: 0
+  shouldCrawl: 0
 --- !u!195 &2544157612059964863
 NavMeshAgent:
   m_ObjectHideFlags: 0

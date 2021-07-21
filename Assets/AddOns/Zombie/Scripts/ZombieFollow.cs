@@ -6,8 +6,9 @@ public class ZombieFollow : MonoBehaviour
     [SerializeField] private UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] public GameObject target;
     [SerializeField] private Animator animator = null;
-    [SerializeField] public bool isAttacking = false;
+    [SerializeField] private bool isAttacking = false;
     [SerializeField] public bool isDead = false;
+    [SerializeField] public bool shouldCrawl = false;
 
     void Awake()
     {
@@ -24,7 +25,12 @@ public class ZombieFollow : MonoBehaviour
 
         float velocity = agent.velocity.magnitude;
 
-        animator.SetBool("Walking", velocity > 0.1);
+
+        if (velocity > 0.1f)
+            if (agent.speed > 0.5f)
+                if (shouldCrawl) animator.SetBool("Running Crawl", true);
+                else animator.SetBool("Running", true);
+            else animator.SetBool("Walking", true);
 
         if (TargetIsClose() && !isAttacking)
         {
