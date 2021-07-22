@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class ZombieFollow : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.AI.NavMeshAgent agent;
+    [SerializeField] public UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] public GameObject target;
     [SerializeField] private Animator animator = null;
     [SerializeField] private bool isAttacking = false;

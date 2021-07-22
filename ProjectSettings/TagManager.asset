@@ -12,6 +12,7 @@ TagManager:
   - WeaponBuy
   - Body
   - Head
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX

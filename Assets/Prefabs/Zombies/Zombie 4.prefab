@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &4407010707032227999
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5871329719639646999}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 8d2ec2f472c474443a6ddca0a2dcadb4, type: 3}
 --- !u!114 &688913204671769253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,20 +32,6 @@ MonoBehaviour:
   playerScore: {fileID: 0}
   zombieManager: {fileID: 0}
   isDead: 0
---- !u!64 &4407010707032227999
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5871329719639646999}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 8d2ec2f472c474443a6ddca0a2dcadb4, type: 3}
 --- !u!1001 &7700325339784549335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298169471389531822, guid: 8620e2aaf11ae47eab24e4d06173f1be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4298169471389531822, guid: 8620e2aaf11ae47eab24e4d06173f1be, type: 3}
       propertyPath: m_LocalPosition.y
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4298169471389531822, guid: 8620e2aaf11ae47eab24e4d06173f1be, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4298169471389531822, guid: 8620e2aaf11ae47eab24e4d06173f1be, type: 3}
       propertyPath: m_LocalRotation.w

@@ -30,6 +30,7 @@ MonoBehaviour:
   scorePerZombie: 400
   zombieFollow: {fileID: 6517764078046798002}
   playerScore: {fileID: 0}
+  zombieManager: {fileID: 0}
   isDead: 0
 --- !u!1001 &8322552490678895007
 PrefabInstance:
@@ -48,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2957768193519936259, guid: 883d0ad8e87df46c2ae97af2b105ca55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2957768193519936259, guid: 883d0ad8e87df46c2ae97af2b105ca55, type: 3}
       propertyPath: m_LocalPosition.y
@@ -56,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2957768193519936259, guid: 883d0ad8e87df46c2ae97af2b105ca55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2957768193519936259, guid: 883d0ad8e87df46c2ae97af2b105ca55, type: 3}
       propertyPath: m_LocalRotation.w
