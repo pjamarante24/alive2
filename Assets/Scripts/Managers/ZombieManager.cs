@@ -104,7 +104,5 @@ public class ZombieManager : MonoBehaviour
         zombie.transform.position = spawnPoint.transform.position;
 
         zombie.GetComponent<ZombieFollow>().agent.enabled = true;
-
-        Debug.Log("Zombie " + zombie.name + " moved to " + spawnPoint.name);
     }
 }

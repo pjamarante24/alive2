@@ -7,14 +7,14 @@ public class Zombie : MonoBehaviour
     public float health = 100f;
     public int scorePerZombie = 400;
     public ZombieFollow zombieFollow;
-    public PlayerScore playerScore;
+    public Player player;
     public ZombieManager zombieManager;
     public bool isDead = false;
 
     void Start()
     {
         if (!zombieFollow) zombieFollow = gameObject.GetComponent<ZombieFollow>();
-        if (!playerScore) playerScore = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerScore>();
+        if (!player) player = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Player>();
         if (!zombieManager) zombieManager = GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<ZombieManager>();
     }
 
@@ -27,7 +27,7 @@ public class Zombie : MonoBehaviour
     private void Kill()
     {
         isDead = true;
-        if (playerScore) playerScore.AddScore(scorePerZombie);
+        if (player) player.AddScore(scorePerZombie);
         zombieFollow.Kill();
         zombieManager.ZombieKilled(gameObject);
         Destroy(gameObject, 3f);
@@ -37,8 +37,8 @@ public class Zombie : MonoBehaviour
     {
         if (zombieFollow.TargetIsClose())
         {
-            PlayerHealth player = zombieFollow.target.GetComponent<PlayerHealth>();
-            if (player) player.TakeDamage(15f);
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+            if (playerHealth) playerHealth.TakeDamage(15f);
         }
     }
 }

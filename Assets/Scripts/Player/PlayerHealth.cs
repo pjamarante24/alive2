@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float startingHealth = 100f;
+    private float startingHealth = 100f;
+    public float maxHealth = 100f;
     public Slider slider;
     public Image fillImage;
     public Color fullHealthColor = Color.green;
@@ -13,7 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     void OnEnable()
     {
-        currentHealth = startingHealth;
+        currentHealth = maxHealth;
+        startingHealth = currentHealth;
         isDead = false;
 
         SetHealthUI();
@@ -30,11 +32,17 @@ public class PlayerHealth : MonoBehaviour
             OnDeath();
         }
     }
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        SetHealthUI();
+    }
 
     private void SetHealthUI()
     {
+        slider.maxValue = maxHealth;
         slider.value = currentHealth;
-        fillImage.color = Color.Lerp(zeroHealthColor, fullHealthColor, currentHealth / startingHealth);
+        fillImage.color = Color.Lerp(zeroHealthColor, fullHealthColor, currentHealth / maxHealth);
     }
 
     private void OnDeath()

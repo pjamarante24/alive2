@@ -13,6 +13,9 @@ TagManager:
   - Body
   - Head
   - Spawnpoint
+  - CinemachineTarget
+  - WeaponSpot
+  - Vending Machine
   layers:
   - Default
   - TransparentFX
