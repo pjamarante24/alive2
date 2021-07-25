@@ -9,6 +9,9 @@ public class ZombieManager : MonoBehaviour
     public List<GameObject> spawnPoints = new List<GameObject>();
     private List<GameObject> zombies = new List<GameObject>();
     private List<GameObject> nearestSpawnPoints;
+    private float zombieSpeedMultiplier = 1;
+    private float zombieHealthMultiplier = 1;
+    private float zombieDamageMultiplier = 1;
 
     public int initialZombieCount = 3;
     public int currentZombieCount;
@@ -27,6 +30,10 @@ public class ZombieManager : MonoBehaviour
 
         zombies.Clear();
         StartCoroutine(SpawnZombies(currentZombieCount));
+
+        zombieSpeedMultiplier *= 1.01f;
+        zombieHealthMultiplier *= 1.01f;
+        zombieDamageMultiplier *= 1.01f;
     }
 
     IEnumerator SpawnZombies(int count)
@@ -61,6 +68,11 @@ public class ZombieManager : MonoBehaviour
         GameObject zombiePrefab = zombiesPrefab[Random.Range(0, zombiesPrefab.Count)];
         GameObject spawnPoint = nearestSpawnPoints[Random.Range(0, nearestSpawnPoints.Count)];
         GameObject zombie = Instantiate(zombiePrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+        zombie.GetComponent<Zombie>().SetMultipliers(
+            zombieSpeedMultiplier,
+            zombieHealthMultiplier,
+            zombieDamageMultiplier
+        );
         zombies.Add(zombie);
     }
 

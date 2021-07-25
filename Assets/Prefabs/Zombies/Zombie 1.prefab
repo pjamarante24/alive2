@@ -2828,9 +2828,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  damage: 15
   scorePerZombie: 400
   zombieFollow: {fileID: 2369546904123259448}
-  playerScore: {fileID: 0}
+  player: {fileID: 0}
   zombieManager: {fileID: 0}
   isDead: 0
 --- !u!64 &8951617704554793626

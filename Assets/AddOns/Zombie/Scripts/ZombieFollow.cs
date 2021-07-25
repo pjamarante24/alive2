@@ -17,6 +17,11 @@ public class ZombieFollow : MonoBehaviour
         if (!target) target = GameObject.FindGameObjectsWithTag("Player")[1];
     }
 
+    private void Start()
+    {
+        animator.SetBool("Crawl", shouldCrawl);
+    }
+
     void Update()
     {
         if (!target || isDead) return;
@@ -25,12 +30,7 @@ public class ZombieFollow : MonoBehaviour
 
         float velocity = agent.velocity.magnitude;
 
-
-        if (velocity > 0.1f)
-            if (agent.speed > 0.5f)
-                if (shouldCrawl) animator.SetBool("Running Crawl", true);
-                else animator.SetBool("Running", true);
-            else animator.SetBool("Walking", true);
+        animator.SetFloat("Velocity", velocity);
 
         if (TargetIsClose() && !isAttacking)
         {

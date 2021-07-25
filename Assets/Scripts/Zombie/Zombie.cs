@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
     public float health = 100f;
+    public float damage = 15f;
     public int scorePerZombie = 400;
     public ZombieFollow zombieFollow;
     public Player player;
@@ -35,10 +34,24 @@ public class Zombie : MonoBehaviour
 
     public void OnAttack()
     {
+        Debug.Log("On Attack!");
         if (zombieFollow.TargetIsClose())
         {
+            Debug.Log("Target is close!");
+
             PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-            if (playerHealth) playerHealth.TakeDamage(15f);
+            if (playerHealth)
+            {
+                Debug.Log("Player has health!");
+                playerHealth.TakeDamage(damage);
+            }
         }
+    }
+
+    public void SetMultipliers(float speedMultiplier, float healthMultiplier, float damageMultiplier)
+    {
+        health = health * healthMultiplier;
+        damage = damage * damageMultiplier;
+        zombieFollow.agent.speed = zombieFollow.agent.speed * speedMultiplier;
     }
 }

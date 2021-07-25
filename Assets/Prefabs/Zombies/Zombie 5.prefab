@@ -41,9 +41,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  damage: 15
   scorePerZombie: 400
   zombieFollow: {fileID: 6091556340298645250}
-  playerScore: {fileID: 0}
+  player: {fileID: 0}
   zombieManager: {fileID: 0}
   isDead: 0
 --- !u!1001 &7703133336728515646
@@ -56,6 +57,10 @@ PrefabInstance:
     - target: {fileID: 4498683450532389848, guid: 176328cf67ea743a292b3bd9e9de9dc7, type: 3}
       propertyPath: m_Name
       value: Zombie 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4498683450532514619, guid: 176328cf67ea743a292b3bd9e9de9dc7, type: 3}
+      propertyPath: m_Speed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4498683450532584858, guid: 176328cf67ea743a292b3bd9e9de9dc7, type: 3}
       propertyPath: m_RootOrder
