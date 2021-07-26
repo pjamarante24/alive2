@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -16,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         if (!zombieManager) zombieManager = GetComponent<ZombieManager>();
 
         StartCoroutine(GameLoop());
@@ -79,9 +79,12 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameEnding()
     {
+        player.GetComponent<Player>().Disable();
         messageText.text = "Game Over";
 
         yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("StartMenu");
     }
 
     private bool PlayerIsAlive()

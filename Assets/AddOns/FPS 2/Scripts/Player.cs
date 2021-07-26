@@ -44,4 +44,14 @@ public class Player : MonoBehaviour
     {
         score.scoreText.text = score.currentScore.ToString();
     }
+
+    public void Disable()
+    {
+        GetComponentInChildren<StarterAssets.FirstPersonController>().enabled = false;
+        GetComponentInChildren<WeaponHolder>().enabled = false;
+        foreach (var weapon in GetComponentsInChildren<Weapon>())
+        {
+            weapon.enabled = false;
+        }
+    }
 }

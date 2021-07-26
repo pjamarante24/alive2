@@ -34,17 +34,10 @@ public class Zombie : MonoBehaviour
 
     public void OnAttack()
     {
-        Debug.Log("On Attack!");
         if (zombieFollow.TargetIsClose())
         {
-            Debug.Log("Target is close!");
-
             PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-            if (playerHealth)
-            {
-                Debug.Log("Player has health!");
-                playerHealth.TakeDamage(damage);
-            }
+            if (playerHealth) playerHealth.TakeDamage(damage);
         }
     }
 
