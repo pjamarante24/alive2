@@ -14,7 +14,7 @@ public class ZombieFollow : MonoBehaviour
     {
         if (!animator) { animator = gameObject.GetComponent<Animator>(); }
         if (!agent) { agent = gameObject.GetComponent<NavMeshAgent>(); }
-        if (!target) target = GameObject.FindGameObjectsWithTag("Player")[1];
+        if (!target) target = GameObject.FindGameObjectWithTag("PlayerCapsule");
     }
 
     private void Start()

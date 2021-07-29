@@ -16,6 +16,7 @@ TagManager:
   - CinemachineTarget
   - WeaponSpot
   - Vending Machine
+  - PlayerCapsule
   layers:
   - Default
   - TransparentFX
