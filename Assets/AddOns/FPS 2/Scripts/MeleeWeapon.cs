@@ -11,7 +11,7 @@ public class MeleeWeapon : MonoBehaviour
     public class Config
     {
         public float range = 3f;
-        public float fireRate = 2f;
+        public float fireRate = 1f;
         public float impactForce = 10f;
         public float damage = 60f;
     }
