@@ -380,7 +380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config:
-    reloadTime: 1.3
     autoReload: 1
     maxAmmoPerMagazine: 60
     maxAmmoPerWeapon: 240
@@ -404,6 +403,7 @@ MonoBehaviour:
     impactEffect: {fileID: 5997974870909265300, guid: 92520aec78a2a4fd19c2d1de74ad19b4, type: 3}
     icon: {fileID: 0}
     scopeOverlay: {fileID: 0}
+    weaponHolder: {fileID: 0}
   SoundClips:
     shootSound: {fileID: 8300000, guid: 61666804c0e0549f187a88ff2c328063, type: 3}
     takeOutSound: {fileID: 8300000, guid: 4c7a8916143014e9e94df4c795cdd884, type: 3}
@@ -440,7 +440,7 @@ AudioSource:
   m_GameObject: {fileID: 1671029925390012}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6077997395817911661, guid: 9ea3543a9d4f54e5f84eaea8a24e3498, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -536,7 +536,7 @@ AudioSource:
   m_GameObject: {fileID: 1671029925390012}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6077997395817911661, guid: 9ea3543a9d4f54e5f84eaea8a24e3498, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

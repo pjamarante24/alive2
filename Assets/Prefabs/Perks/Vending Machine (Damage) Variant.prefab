@@ -53,8 +53,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6208857628482314195, guid: 866ed5ebc7a89403d874a3fdd21f8d03, type: 3}
       propertyPath: m_Name
-      value: Vending Machine (Damage)
+      value: Vending Machine (Damage) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6209693463774572771, guid: 866ed5ebc7a89403d874a3fdd21f8d03, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209693463774572771, guid: 866ed5ebc7a89403d874a3fdd21f8d03, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209693464899423404, guid: 866ed5ebc7a89403d874a3fdd21f8d03, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6077997395817911661, guid: 9ea3543a9d4f54e5f84eaea8a24e3498, type: 2}
     - target: {fileID: 6209693464899423405, guid: 866ed5ebc7a89403d874a3fdd21f8d03, type: 3}
       propertyPath: type
       value: 3

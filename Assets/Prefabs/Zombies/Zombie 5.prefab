@@ -54,6 +54,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1388720840, guid: 176328cf67ea743a292b3bd9e9de9dc7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6077997395817911661, guid: 9ea3543a9d4f54e5f84eaea8a24e3498, type: 2}
     - target: {fileID: 4498683450532389848, guid: 176328cf67ea743a292b3bd9e9de9dc7, type: 3}
       propertyPath: m_Name
       value: Zombie 5
