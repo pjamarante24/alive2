@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator GameEnding()
     {
         player.GetComponent<Player>().Disable();
-        messageText.text = "Game Over";
+        messageText.text = "Game Over\n" + "Round: " + round;
 
         yield return new WaitForSeconds(3f);
 

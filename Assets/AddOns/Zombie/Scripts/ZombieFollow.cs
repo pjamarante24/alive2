@@ -30,6 +30,11 @@ public class ZombieFollow : MonoBehaviour
 
         float velocity = agent.velocity.magnitude;
 
+        if (!TargetIsClose(1000f))
+        {
+            velocity *= 2f;
+        }
+
         animator.SetFloat("Velocity", velocity);
 
         if (TargetIsClose() && !isAttacking)
@@ -52,8 +57,8 @@ public class ZombieFollow : MonoBehaviour
         else animator.SetBool("Dying", true);
     }
 
-    public bool TargetIsClose()
+    public bool TargetIsClose(float distance = 6f)
     {
-        return (transform.position - target.transform.position).sqrMagnitude < 6f;
+        return (transform.position - target.transform.position).sqrMagnitude < distance;
     }
 }

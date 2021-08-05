@@ -758,6 +758,8 @@ MonoBehaviour:
   centerMessageText: {fileID: 762653647}
   primaryWeaponImage: {fileID: 319145159}
   secondaryWeaponImage: {fileID: 733052905}
+  damageMultiplier: 1
+  reloadTimeMultiplier: 1
 --- !u!1 &1566382033
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score:
     currentScore: 0
-    initialScore: 1000000
+    initialScore: 400
     scoreText: {fileID: 1067739423}
 --- !u!1001 &5302196911566080004
 PrefabInstance:

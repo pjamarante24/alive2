@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnPlay()
     {
-        SceneManager.LoadScene("ZombieGame");
+        SceneManager.LoadScene("ZombieGameSmall");
     }
     public void OnExit()
     {
