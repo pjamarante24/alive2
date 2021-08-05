@@ -30,7 +30,7 @@ public class ZombieFollow : MonoBehaviour
 
         float velocity = agent.velocity.magnitude;
 
-        if (!TargetIsClose(1000f))
+        if (!TargetIsClose(500f))
         {
             velocity *= 2f;
         }
