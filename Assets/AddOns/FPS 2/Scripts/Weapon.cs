@@ -238,7 +238,7 @@ public class Weapon : MonoBehaviour
             component.animator.SetFloat("ReloadSpeed", component.weaponHolder.reloadTimeMultiplier);
             reloadTimeMultiplier = component.weaponHolder.reloadTimeMultiplier;
         }
-        yield return new WaitForSeconds(reloadTime * -reloadTimeMultiplier);
+        yield return new WaitForSeconds(reloadTime - ((reloadTime * reloadTimeMultiplier) - reloadTime));
 
         int newAmmo = 0;
         if (config.infinityAmmo)
