@@ -30536,8 +30536,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 104657259}
   gameManager: {fileID: 687060057}
+  zombieManager: {fileID: 687060059}
   audioMixer: {fileID: 24100000, guid: 9ea3543a9d4f54e5f84eaea8a24e3498, type: 2}
   roundText: {fileID: 63240550}
+  zombiesLeftText: {fileID: 379186699}
+  zombiesKilledText: {fileID: 18871353}
 --- !u!4 &687622213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 480730, guid: 1893b7edd0ad11b4e9f6f17eeb9455b6, type: 3}
